@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS2-Syed Suhail</title>
+</head>
+<body>
+    <h1>Alphabetize String</h1>
+    <label for="stringInput">Enter a string:</label>
+    <input type="text" id="stringInput">
+    <button id="alphabetizeButton">Alphabetize</button>
+    <p id="result"></p>
+
+    <script>
+        function alphabetizeString(str) {
+            const charArray = str.split('');
+            const sortedArray = charArray.sort();
+            const sortedStr = sortedArray.join('');
+            return sortedStr;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const stringInput = document.getElementById('stringInput');
+            const alphabetizeButton = document.getElementById('alphabetizeButton');
+            const result = document.getElementById('result');
+
+            alphabetizeButton.addEventListener('click', function () {
+                const inputStr = stringInput.value;
+                const sortedResult = alphabetizeString(inputStr);
+                result.textContent = `Original: ${inputStr}, Alphabetized: ${sortedResult}`;
+            });
+        });
+    </script>
+</body>
+</html>
